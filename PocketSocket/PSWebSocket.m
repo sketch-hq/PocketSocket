@@ -184,7 +184,8 @@
         NSAssert(readStream && writeStream, @"Failed to create streams for client socket");
 
         NSString *networkServiceType = nil;
-
+#pragma clang diagnostic push
+#pragma clang diagnostic ignored "-Wdeprecated-declarations"
         switch (request.networkServiceType) {
         case NSURLNetworkServiceTypeDefault:
             break;
@@ -204,6 +205,7 @@
         default:
             NSAssert(false, @"Unhandled networkServiceType %tu", request.networkServiceType);
         }
+#pragma clang diagnostic pop
 
         _inputStream = CFBridgingRelease(readStream);
         _outputStream = CFBridgingRelease(writeStream);
