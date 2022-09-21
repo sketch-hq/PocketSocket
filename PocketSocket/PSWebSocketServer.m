@@ -268,7 +268,10 @@ void PSWebSocketServerAcceptCallback(CFSocketRef s, CFSocketCallBackType type, C
             CFWriteStreamSetProperty(writeStream, kCFStreamPropertySSLSettings, (__bridge CFDictionaryRef)opts);
 
             SSLContextRef context = (SSLContextRef)CFWriteStreamCopyProperty(writeStream, kCFStreamPropertySSLContext);
+#pragma clang diagnostic push
+#pragma clang diagnostic ignored "-Wdeprecated-declarations"
             SSLSetClientSideAuthenticate(context, kTryAuthenticate);
+#pragma clang diagnostic pop
             CFRelease(context);
         }
         
