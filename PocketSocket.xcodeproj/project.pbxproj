@@ -410,7 +410,7 @@
 			isa = PBXProject;
 			attributes = {
 				BuildIndependentTargetsInParallel = YES;
-				LastUpgradeCheck = 1610;
+				LastUpgradeCheck = 2700;
 				ORGANIZATIONNAME = "Zwopple Limited";
 				TargetAttributes = {
 					EE453D0E1CABF60300A2EA13 = {
